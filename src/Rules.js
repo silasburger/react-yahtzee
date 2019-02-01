@@ -55,7 +55,7 @@ class SumDistro extends Rule {
     // do any of the counts meet of exceed this distro?
     return (this.freq(dice).some(c => c >= this.count)) ? this.sum(dice) : 0;
   }
-}
+} 
 
 /** Check if full house (3-of-kind and 2-of-kind) */
 
