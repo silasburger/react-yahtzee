@@ -38,6 +38,7 @@ class Scoring extends Component {
             </tbody>
           </table>
         </section>
+        <div><span>Score: {this.props.totalScore}</span> <span>High Score: {this.props.highScore ? this.props.highScore: 0}</span></div>
       </div>
     )
   }

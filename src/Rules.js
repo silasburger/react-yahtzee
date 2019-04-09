@@ -52,7 +52,7 @@ class TotalOneNumber extends Rule {
 
 class SumDistro extends Rule {
   evalRoll = (dice) => {
-    // do any of the counts meet of exceed this distro?
+    // do any of the counts meet or exceed this distro?
     return (this.freq(dice).some(c => c >= this.count)) ? this.sum(dice) : 0;
   }
 } 
@@ -69,8 +69,16 @@ class FullHouse extends Rule {
 
 /** Check for small straights. */
 
-class SmallStraight {
-  // TODO
+class SmallStraight extends Rule {
+  evalRoll = (dice) => {
+    const d = new Set(dice);
+
+    // size is 4 four, at least
+    // has 3 and 4 in it
+    // has four in a row : 1234, 2345, 3456
+
+    return d.size >= 4 && d.has(3) && d.has(4) && ((d.has(1) && d.has(2)) || (d.has(2) && d.has(5)) || (d.has(5) && d.has(6))) ? this.score : 0;
+  }
 }
 
 /** Check for large straights. */

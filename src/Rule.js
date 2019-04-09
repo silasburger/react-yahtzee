@@ -4,7 +4,7 @@ import './Rule.css'
 class Rule extends Component {
   render() {
       return (
-        <tr className="Rule Rule-active" onClick={this.props.doScore}>
+        <tr className="Rule Rule-active" onClick={this.props.score === undefined ? this.props.doScore : null}>
           <td className="Rule-name">{this.props.name}</td>
           <td className="Rule-score">{this.props.score}</td>
         </tr>
