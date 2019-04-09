@@ -1,4 +1,14 @@
-.Scoring {}
+#scores > h3 {
+  display: inline;
+}
+
+#scores > h3:nth-child(2) {
+  margin-left: 20px;
+}
+
+#scores {
+  margin-top: 20px;
+}
 
 .Scoring-section {
   display: inline-block;

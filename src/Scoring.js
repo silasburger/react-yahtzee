@@ -11,6 +11,7 @@ class Scoring extends Component {
 
     return (
       <div className="Scoring">
+        <div id="scores"><h3>Score: {this.props.totalScore}</h3> <h3>Highscore: {this.props.highScore ? this.props.highScore: 0}</h3></div>
         <section className="Scoring-section">
           <h2>Upper</h2>
           <table cellSpacing="0">
@@ -38,7 +39,6 @@ class Scoring extends Component {
             </tbody>
           </table>
         </section>
-        <div><span>Score: {this.props.totalScore}</span> <span>High Score: {this.props.highScore ? this.props.highScore: 0}</span></div>
       </div>
     )
   }

@@ -124,18 +124,19 @@ class Game extends Component {
   render() {
     return (
       <section>
-       {this.state.isGameOver ? <button onClick={this.resetGame}>Restart</button> : <><Dice
+        <Dice
           dice={this.state.dice}
           locked={this.state.locked}
           toggleLocked={this.toggleLocked}
         />
+       {this.state.isGameOver ? <button className="Game-restart" onClick={this.resetGame}>Restart</button> :
         <button
           className="Game-reroll"
           disabled={this.state.rollsLeft < 1}
           onClick={this.roll}
         >
           {this.state.rollsLeft} Rerolls Left
-        </button></>}
+        </button>}
         <Scoring totalScore={this.state.totalScore} doScore={this.doScore} highScore={this.state.highScore} scores={this.state.scores} />
       </section>
     );
